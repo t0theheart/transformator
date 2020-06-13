@@ -1,6 +1,6 @@
-from app.app import Application
+from app.app import ApplicationABC
 
 
-class Double(Application):
+class Double(ApplicationABC):
     def _transform(self):
         self._data = ''.join([char if char.isspace() else char+char for char in self._data])

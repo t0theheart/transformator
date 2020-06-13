@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Application(ABC):
+class ApplicationABC(ABC):
     def __init__(self, read_from: str, write_to: str):
         self._read_from = read_from
         self._write_to = write_to
