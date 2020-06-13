@@ -8,17 +8,32 @@ class TransformMap(Enum):
     split = Split
 
 
-print('Program started!')
+def main():
+    """
+        Example of using:
 
-read_from = input('Enter read from: ')
-write_to = input('Enter write to: ')
-print(f'Sort types: "{TransformMap.double.name}", "{TransformMap.sum_ascii.name}", "{TransformMap.split.name}"')
-transform_type = input('Enter transform type: ')
+        "Transformator" started!
+        Enter read from: text.txt
+        Enter write to: result.txt
+        Sort types: double, sum_ascii, split
+        Enter transform type: split
+        End.
+    """
+    print('"Transformator" started!')
 
-try:
-    program = TransformMap[transform_type].value(read_from, write_to)
-    program.run()
-except KeyError:
-    print(f'"{transform_type}" is wrong transform type, please start program again.')
+    read_from = input('Enter read from: ')
+    write_to = input('Enter write to: ')
+    print(f'Sort types: {TransformMap.double.name}, {TransformMap.sum_ascii.name}, {TransformMap.split.name}')
+    transform_type = input('Enter transform type: ')
 
-print('End.')
+    try:
+        program = TransformMap[transform_type].value(read_from=read_from, write_to=write_to)
+        program.run()
+    except KeyError:
+        print(f'"{transform_type}" is wrong transform type, please start program again.')
+
+    print('End.')
+
+
+if __name__ == '__main__':
+    main()
