@@ -13,7 +13,7 @@ Transformation depends on **transform type** which is entered by client.
 ![](class_schema/transformator.png)
 
 ### Template method
-There is mathod **run** in abstract class **ApplicationABC**
+There is method **run** in abstract class **ApplicationABC**
 ```python
 def run(self):
     self._read()
